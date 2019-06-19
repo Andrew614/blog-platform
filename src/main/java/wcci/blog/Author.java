@@ -1,14 +1,19 @@
 package wcci.blog;
 
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Author {
 
 	private String name;
-	private Post post;
+	@OneToMany(mappedBy = "author")
+	private Collection<Post> posts;
 	
 	@Id
 	@GeneratedValue

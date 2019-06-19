@@ -11,6 +11,7 @@ public class Post {
 	
 	private String title;
 	private String content;
+	
 	private Author author;
 	private LocalDateTime publishDate;
 	private Category category;
