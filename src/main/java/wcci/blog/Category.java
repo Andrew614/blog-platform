@@ -9,9 +9,9 @@ public class Category {
 
 	private String name;
 	private Post post;
-	
+
 	@Id
 	@GeneratedValue
 	private long id;
-	
+
 }

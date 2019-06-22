@@ -6,10 +6,10 @@ import javax.persistence.Id;
 
 @Entity
 public class Tag {
-	
+
 	private String name;
 	private Post post;
-	
+
 	@Id
 	@GeneratedValue
 	private long id;

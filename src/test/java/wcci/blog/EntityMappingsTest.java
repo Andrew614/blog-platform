@@ -17,25 +17,26 @@ public class EntityMappingsTest {
 
 	@Autowired
 	private TestEntityManager entityManager;
-	
+
 	@Autowired
 	private AuthorRepository authorRepo;
-	
+
 	@Autowired
 	private PostRepository postRepo;
-	
+
 	@Autowired
 	private CategoryRepository categoryRepo;
-	
+
 	@Autowired
 	private TagRepository tagRepo;
-	
+
 	@Test
 	public void shouldSaveAndLoadAuthor() {
 		Author author1 = new Author("author1");
+		// need to create a Post object and instantiate it
 		entityManager.persist(author1);
 		entityManager.flush();
-		
+
 		Author foundAuthor = authorRepo.findById(author1.getId()).get();
 		assertThat(foundAuthor.getName(), is("author1"));
 	}
