@@ -33,8 +33,14 @@ public class EntityMappingsTest {
 	@Test
 	public void shouldSaveAndLoadAuthor() {
 		Author author1 = new Author("author1");
-		// need to create a Post object and instantiate it
+		Category cat = new Category("cat");
+		Tag tag = new Tag("stuff");
+		Post testPost = new Post("title", author1, cat, tag,"content");
 		entityManager.persist(author1);
+		entityManager.persist(cat);
+		entityManager.persist(tag);
+		// need to create a Post object and instantiate it
+		entityManager.persist(testPost);
 		entityManager.flush();
 
 		Author foundAuthor = authorRepo.findById(author1.getId()).get();

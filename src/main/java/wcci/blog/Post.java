@@ -21,6 +21,16 @@ public class Post {
 	@GeneratedValue
 	private long id;
 
+	public Post(String title, Author author, Category category, Tag tag, String content) {
+		this.title = title;
+		this.author = author;
+		this.category = category;
+		this.tag = tag;
+		this.content =content;
+		
+
+	}
+
 	public long getId() {
 		return id;
 	}
