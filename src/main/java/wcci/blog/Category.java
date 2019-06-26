@@ -19,6 +19,10 @@ public class Category {
 	@GeneratedValue
 	private long id;
 
+	protected Category() {
+
+	}
+
 	public Category(String name) {
 
 	}

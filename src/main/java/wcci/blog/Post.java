@@ -29,6 +29,8 @@ public class Post {
 	@Id
 	@GeneratedValue
 	private long id;
+	
+	protected Post() {}
 
 	public Post(String title, Author author, Category category, String content, Tag... tags) {
 		this.title = title;
