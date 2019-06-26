@@ -19,6 +19,9 @@ public class Tag {
 	@GeneratedValue
 	private long id;
 
+	protected Tag() {
+	}
+
 	public Tag(String name) {
 		this.name = name;
 	}
@@ -40,8 +43,6 @@ public class Tag {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + (int) (id ^ (id >>> 32));
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((posts == null) ? 0 : posts.hashCode());
 		return result;
 	}
 
@@ -55,16 +56,6 @@ public class Tag {
 			return false;
 		Tag other = (Tag) obj;
 		if (id != other.id)
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (posts == null) {
-			if (other.posts != null)
-				return false;
-		} else if (!posts.equals(other.posts))
 			return false;
 		return true;
 	}
