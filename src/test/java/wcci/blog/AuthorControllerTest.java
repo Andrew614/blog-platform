@@ -20,7 +20,9 @@ import org.springframework.ui.Model;
 public class AuthorControllerTest {
 
 	@InjectMocks
-	AuthorController underTest;
+
+	private AuthorController underTest;
+	
 
 	@Mock
 	private AuthorRepository authorRepo;
