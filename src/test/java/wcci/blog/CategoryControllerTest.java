@@ -58,6 +58,7 @@ public class CategoryControllerTest {
 		assertThat(category, is("categoryTemplate"));
 	}
 	
+	@Test
 	public void shouldHaveCategoryInModel() {
 		Optional<Category> category = Optional.of(category1);
 		Mockito.when(categoryRepo.findById(category1.getId())).thenReturn(category);
