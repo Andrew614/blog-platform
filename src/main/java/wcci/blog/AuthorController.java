@@ -9,14 +9,16 @@ public class AuthorController {
 
 	@Autowired
 	private AuthorRepository authorRepo;
-	
-	
+
 	public String findAll(Model model) {
-		model.addAttribute("authorAttribute", authorRepo.findAll());
+		model.addAttribute("authorsAttribute", authorRepo.findAll());
 		return "authorsTemplate";
-		
-	
-		
+
+	}
+
+	public String getOneAuthor(Model model, long id) {
+		model.addAttribute("authorAttribute", authorRepo.findById(id));
+		return "authorTemplate";
 	}
 
 }
