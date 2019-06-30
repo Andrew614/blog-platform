@@ -10,15 +10,13 @@ public class TagController {
 	private TagRepository tagRepo;
 
 	public String getAllTags(Model model) {
-	model.addAttribute("tagsAttribute", tagRepo.findAll());
+		model.addAttribute("tagsAttribute", tagRepo.findAll());
 		return "tagsTemplate";
 	}
 
 	public String getOneTag(Model model, long id) {
-	model.addAttribute("tagAttribute", tagRepo.findById(id));
+		model.addAttribute("tagAttribute", tagRepo.findById(id));
 		return "tagTemplate";
 	}
-
-	
 
 }
