@@ -17,7 +17,7 @@ public class Tag {
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 
 	protected Tag() {
 	}
@@ -30,7 +30,7 @@ public class Tag {
 		return name;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

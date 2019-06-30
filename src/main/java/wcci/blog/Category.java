@@ -1,11 +1,15 @@
 package wcci.blog;
 
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+
 
 @Entity
 public class Category {
@@ -17,14 +21,15 @@ public class Category {
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 
 	protected Category() {
 
 	}
 
-	public Category(String name) {
-
+	public Category(String name, Post...posts) {
+		this.name = name;
+		this.posts = new HashSet<>(Arrays.asList(posts));
 	}
 
 	public String getName() {

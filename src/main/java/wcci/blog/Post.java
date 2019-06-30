@@ -1,8 +1,8 @@
 package wcci.blog;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,10 +37,7 @@ public class Post {
 		this.author = author;
 		this.category = category;
 		this.content =content;
-		this.tags = new ArrayList<Tag>();
-		for(Tag tag: tags) {
-			this.tags.add(tag);
-		}
+		this.tags = new HashSet<Tag>();
 	}
 
 	public long getId() {
