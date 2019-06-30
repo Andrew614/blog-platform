@@ -10,6 +10,12 @@
 
 <body>
     <h1>Authors</h1>
+    <form action="/authors/add" method="POST">
+        <label>Name
+            <input type="text" required name="authorString" placeholder="Enter New Author">
+        </label>
+        <button type="submit">Submit</button>
+</form>
 
     <div th:each="author: ${authorsAttribute}">
         <a th:text="${author.name}" th:href="|/authors/${author.id}|"></a>

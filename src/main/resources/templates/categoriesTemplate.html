@@ -10,7 +10,12 @@
 
 <body>
     <h1>Categories</h1>
-
+    <form action="/categories/add" method="POST">
+        <label>Name
+            <input type="text" required name="categoryString" placeholder="Enter Category Name">
+        </label>
+        <button type="submit">Submit</button>
+</form>
     <div th:each="category: ${categoriesAttribute}">
         <a th:text="${category.name}" th:href="|/categories/${category.id}|"></a>
     </div>

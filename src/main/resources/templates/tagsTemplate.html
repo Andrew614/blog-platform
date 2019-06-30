@@ -8,6 +8,12 @@
 </head>
 <body>
     <h1>Tags</h1>
+    <form action="/tags/add" method="POST">
+        <label>Name
+            <input type="text" required name="tagString" placeholder="Enter New Tag">
+        </label>
+        <button type="submit">Submit</button>
+</form>
 
     <div th:each="tag: ${tagsAttribute}">
         <a th:text= "${tag.name}" th:href="|/tags/${tag.id}|"></a>
