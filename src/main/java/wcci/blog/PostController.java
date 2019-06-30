@@ -30,7 +30,7 @@ public class PostController {
 		Author author = new Author(authorString);
 		Tag tag = new Tag(tagsString);
 		postRepo.save(new Post(title, author, category, content, tag));
-		return "redirect:/posts/";
+		return "redirect:/posts";
 		
 	}
 
