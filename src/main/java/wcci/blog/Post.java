@@ -40,6 +40,7 @@ public class Post {
 		this.tags = new ArrayList<Tag>();
 		for(Tag tag: tags) {
 			this.tags.add(tag);
+		
 		}
 	}
 

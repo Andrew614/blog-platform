@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog Site</title>
+</head>
+<body>
+    <h1>Tags</h1>
+
+    <div th:each="tag: ${tagsAttribute}">
+        <a th:text= "${tag.name}" th:href="|/tags/${tag.id}|"></a>
+    </div>
+    
+</body>
+</html>
