@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width= , initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blog Site</title>
 </head>
+
 <body>
     <h1>Blog Posts</h1>
-
+    <form action="/posts/add" method="POST">
+        <ul>
+            <label>Title
+                <input type="text" required name="title" placeholder="Enter Title" />
+            </label>
+            <label>Author
+                <input type="text" required name="authorString" placeholder="Enter Author">
+            </label>
+            <label>Category
+                <input type="text" required name="categoryString" placeholder="Enter Category">
+            </label>
+            <label>Content
+                <input type="text" required name="content" placeholder="Enter Content">
+            </label>
+            <label>Tag
+                <input type="text" required name="tagsString" placeholder="Enter Tag">
+            </label>
+            <button type="submit">Submit</button>
+        </ul>
+    </form>
     <div th:each="post: ${postsAttribute}">
-        <a th:text= "${post.title}" th:href="|/posts/${post.id}|"></a>
+        <a th:text="${post.title}" th:href="|/posts/${post.id}|"></a>
     </div>
-    
+
 </body>
+
 </html>

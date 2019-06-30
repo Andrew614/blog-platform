@@ -12,10 +12,10 @@
     <section>
         <h1 th:text="${postAttribute.title}">Post title</h1>
         <h3 th:text="${postAttribute.author.name}">Author</h3>
-        <p th:text="${postAttribute.category}">Category</p>
+        <p th:text="${postAttribute.category.name}">Category</p>
         <p th:text="${postAttribute.content}">Content</p>
-
     </section>
+    <a href="/posts">Back to all posts</a>
 </body>
 
 </html>
