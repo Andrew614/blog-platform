@@ -56,13 +56,13 @@ public class PostControllerTest {
 	public void shouldHaveOnePostInModel() {
 		Optional<Post> post = Optional.of(post1);
 		when(postRepo.findById(post1.getId())).thenReturn(post);
-		underTest.getOnePost(model, 0L);
+		underTest.getOnePost(0L, model);
 		verify(model).addAttribute("postAttribute", post);
 	}
 	
 	@Test
 	public void shouldBeAbleToGetOnePost() {
-		String post = underTest.getOnePost(model, 0L);
+		String post = underTest.getOnePost(0L, model);
 		assertThat(post, is("postTemplate"));
 	}
 	

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Post</title>
+</head>
+
+<body>
+    <section>
+        <h1 th:text="${postAttribute.title}">Post title</h1>
+        <h3 th:text="${postAttribute.author.name}">Author</h3>
+        <p th:text="${postAttribute.category}">Category</p>
+        <p th:text="${postAttribute.content}">Content</p>
+
+    </section>
+</body>
+
+</html>
