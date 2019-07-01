@@ -34,7 +34,7 @@ public class Author {
 		return name;
 	}
 
-	public Collection<Post> getPost() {
+	public Collection<Post> getPosts() {
 		return posts;
 	}
 
