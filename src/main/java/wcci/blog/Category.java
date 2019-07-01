@@ -9,8 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-
-
 @Entity
 public class Category {
 
@@ -27,7 +25,7 @@ public class Category {
 
 	}
 
-	public Category(String name, Post...posts) {
+	public Category(String name, Post... posts) {
 		this.name = name;
 		this.posts = new HashSet<>(Arrays.asList(posts));
 	}
@@ -36,19 +34,19 @@ public class Category {
 		return name;
 	}
 
-	public Collection<Post> getPost() {
-		return posts;
-	}
-
 	public Long getId() {
 		return id;
+	}
+
+	public Collection<Post> getPosts() {
+		return posts;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 
@@ -61,7 +59,10 @@ public class Category {
 		if (getClass() != obj.getClass())
 			return false;
 		Category other = (Category) obj;
-		if (id != other.id)
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}

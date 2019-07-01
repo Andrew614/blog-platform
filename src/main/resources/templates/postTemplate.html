@@ -11,7 +11,7 @@
 <body>
     <div class="warpper">
         <header class="main-header">
-            <h1 class="main-header__title">Author</h1>
+            <h1 class="main-header__title">Bloggie</h1>
             <nav class="nav">
                 <ul class="nav__list">
                     <li class="nav__list-item"><a href="/posts/">Posts</a></li>
@@ -28,6 +28,9 @@
                     <h3 class="posts__section-item" th:text="${postAttribute.author.name}">Author</h3>
                     <p class="posts__section-item" th:text="${postAttribute.category.name}">Category</p>
                     <p class="posts__section-item" th:text="${postAttribute.content}">Content</p>
+                    <div class="posts__section-item" th:each="tag: ${postAttribute.tags}">
+                        <p th:text="${tag.name}"></p>
+                    </div>
                 </section>
                 <a href="/posts">Back to all posts</a>
             </div>
