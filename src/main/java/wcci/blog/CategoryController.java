@@ -27,9 +27,11 @@ public class CategoryController {
 	}
 	
 	@PostMapping("/categories/add")
-	public String addCategory(String categoryString) {
-		Category category = new Category(categoryString);
-		categoryRepo.save(category);
+	public String addCategory(String category) {
+		Category categoryToAdd = new Category(category);
+		if (categoryRepo.findByName(categoryToAdd.getName()) == null) {
+			categoryRepo.save(categoryToAdd);
+        }	
 		return "redirect:/categories";
 	}
 
