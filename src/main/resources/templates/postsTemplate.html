@@ -26,19 +26,44 @@
                 <h1 class="posts-title">Blog Posts</h1>
                 <form class="post-form" action="/posts/add" method="POST">
                     <label class="post-form__field">Title
-                        <input type="text" required name="title" placeholder="Enter Title" />
+                        <input type="text" name="title" placeholder="Enter Title" required />
                     </label>
                     <label class="post-form__field">Author
-                        <input type="text" required name="authorString" placeholder="Enter Author">
+                        <select name="authorString" required>
+                            <option selected></option>
+                            <option value="Wonder Woman">Wonder Woman</option>
+                            <option value="Deadpool">Deadpool</option>
+                            <option value="Jessica Jones">Jessica Jones</option>
+                            <option value="Luke Cage">Luke Cage</option>
+                            <option value="Captain America">Captain America</option>
+                            <option value="Iron Man">Iron Man</option>
+                        </select>
                     </label>
                     <label class="post-form__field">Category
-                        <input type="text" required name="categoryString" placeholder="Enter Category">
-                    </label>
-                    <label class="post-form__field">Content
-                        <input type="text" required name="content" placeholder="Enter Content">
+                        <select name="categoryString" required>
+                            <option selected></option>
+                            <option value="popery">popery</option>
+                            <option value="music">music</option>
+                            <option value="comics">comics</option>
+                            <option value="food">food</option>
+                            <option value="drinks">drinks</option>
+                            <option value="life">life</option>
+                        </select>
                     </label>
                     <label class="post-form__field">Tag
-                        <input type="text" required name="tagsString" placeholder="Enter Tag">
+                        <select name="tagsString" required>
+                            <option selected></option>
+                            <option value="legend">legend</option>
+                            <option value="heros">heros</option>
+                            <option value="coke">coke</option>
+                            <option value="country trap">country trap</option>
+                            <option value="beer">beer</option>
+                            <option value="pop">pop</option>
+                        </select>
+                    </label>
+                    <label class="post-form__field" required>Content
+                        <textarea required name="content" id="" cols="30" rows="10"
+                            placeholder="Enter Content"></textarea>
                     </label>
                     <button class="post-form__button" type="submit">Submit</button>
                 </form>
