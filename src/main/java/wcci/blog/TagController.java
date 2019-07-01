@@ -25,9 +25,11 @@ public class TagController {
 	}
 
 	@PostMapping("/tags/add")
-	public String addTag(String tagString) {
-		Tag tag = new Tag(tagString);
-		tagRepo.save(tag);
+	public String addTag(String tag) {
+		Tag tagToAdd = new Tag(tag);
+		if (tagRepo.findByName(tagToAdd.getName()) == null) {
+            tagRepo.save(tagToAdd);
+        }	
 		return "redirect:/tags";
 	}
 
