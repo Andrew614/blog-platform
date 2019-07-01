@@ -22,7 +22,7 @@ public class PostTest {
 		assertThat(expectedContent, is("content"));
 		assertThat(undertest.getAuthor().getName(), is("bob"));
 		assertThat(undertest.getCategory(), is(cat));
-		assertThat(undertest.getTag(), contains(tag));
+		assertThat(undertest.getTags(), contains(tag));
 
 	}
 
