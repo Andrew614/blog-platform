@@ -1,6 +1,7 @@
 package wcci.blog;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+
 
 @Entity
 public class Post {
@@ -37,7 +39,7 @@ public class Post {
 		this.author = author;
 		this.category = category;
 		this.content =content;
-		this.tags = new HashSet<Tag>();
+		this.tags = new HashSet<Tag>(Arrays.asList(tags));
 	}
 
 	public long getId() {
@@ -60,11 +62,12 @@ public class Post {
 		return publishDate;
 	}
 
+
 	public Category getCategory() {
 		return category;
 	}
 
-	public Collection<Tag> getTag() {
+	public Collection<Tag> getTags() {
 		return tags;
 	}
 
