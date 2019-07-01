@@ -12,8 +12,44 @@
     text-decoration: none;
   }
 
-  body {
-    background-color: red;
+  a:hover {
+    color: blue;
+  }
+
+  footer {
+    padding-left: 2rem;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .main-header {
+    align-items: center;
+    background-color: grey;
+    display: flex;
+    font-family: raleway;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    width: 100%;
+  }
+
+  .nav__list {
+    display: flex;
+  }
+
+  .nav__list-item {
+    margin-right: 1em;
+  }
+
+  .container {
+    padding: 1rem 2rem;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-rows: 5rem auto 2rem;
+    min-height: 100vh;
   }
 
   
