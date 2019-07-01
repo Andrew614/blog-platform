@@ -9,13 +9,30 @@
 </head>
 
 <body>
-    <section>
-        <h1 th:text="${postAttribute.title}">Post title</h1>
-        <h3 th:text="${postAttribute.author.name}">Author</h3>
-        <p th:text="${postAttribute.category.name}">Category</p>
-        <p th:text="${postAttribute.content}">Content</p>
-    </section>
-    <a href="/posts">Back to all posts</a>
+    <div class="warpper">
+        <header class="main-header">
+            <h1 class="main-header__title">Author</h1>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__list-item"><a href="/posts/">Posts</a></li>
+                    <li class="nav__list-item"><a href="/authors/">Authors</a></li>
+                    <li class="nav__list-item"><a href="/categories/">Categories</a></li>
+                    <li class="nav__list-item"><a href="/tags/">Tags</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <section class="posts__section">
+                    <h1 class="posts__section-title" th:text="${postAttribute.title}">Post title</h1>
+                    <h3 class="posts__section-item" th:text="${postAttribute.author.name}">Author</h3>
+                    <p class="posts__section-item" th:text="${postAttribute.category.name}">Category</p>
+                    <p class="posts__section-item" th:text="${postAttribute.content}">Content</p>
+                </section>
+                <a href="/posts">Back to all posts</a>
+            </div>
+        </main>
+    </div>
 </body>
 
 </html>

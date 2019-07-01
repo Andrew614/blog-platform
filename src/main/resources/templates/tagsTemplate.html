@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width= , initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blog Site</title>
 </head>
-<body>
-    <h1>Tags</h1>
-    <form action="/tags/add" method="POST">
-        <label>Name
-            <input type="text" required name="tagString" placeholder="Enter New Tag">
-        </label>
-        <button type="submit">Submit</button>
-</form>
 
-    <div th:each="tag: ${tagsAttribute}">
-        <a th:text= "${tag.name}" th:href="|/tags/${tag.id}|"></a>
+<body>
+    <div class="wrapper">
+        <header class="main-header">
+            <h1 class="main-header__title">Authors List</h1>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__list-item"><a href="/posts/">Posts</a></li>
+                    <li class="nav__list-item"><a href="/authors/">Authors</a></li>
+                    <li class="nav__list-item"><a href="/categories/">Categories</a></li>
+                    <li class="nav__list-item"><a href="/tags/">Tags</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <h1 class="tags-title">Tags</h1>
+                <form class="tag-form" action="/tags/add" method="POST">
+                    <label class="tag-form__field">Name
+                        <input type="text" required name="tagString" placeholder="Enter New Tag">
+                    </label>
+                    <button class="tag-form__button" type="submit">Submit</button>
+                </form>
+
+                <section class="tags__list">
+                    <div th:each="tag: ${tagsAttribute}">
+                        <a class="tags__list-item" th:text="${tag.name}" th:href="|/tags/${tag.id}|"></a>
+                    </div>
+                </section>
+            </div>
+        </main>
     </div>
-    
+
 </body>
+
 </html>

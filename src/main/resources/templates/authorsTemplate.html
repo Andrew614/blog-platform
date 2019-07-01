@@ -6,19 +6,41 @@
     <meta name="viewport" content="width= , initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blog Site</title>
+    <link rel="stylesheet" type="text/css" href="/src/main/resources/static/css/style.css" />
 </head>
 
 <body>
-    <h1>Authors</h1>
-    <form action="/authors/add" method="POST">
-        <label>Name
-            <input type="text" required name="authorString" placeholder="Enter New Author">
-        </label>
-        <button type="submit">Submit</button>
-</form>
+    <div class="wrapper">
+        <header class="main-header">
+            <h1 class="main-header__title">Authors List</h1>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__list-item"><a href="/posts/">Posts</a></li>
+                    <li class="nav__list-item"><a href="/authors/">Authors</a></li>
+                    <li class="nav__list-item"><a href="/categories/">Categories</a></li>
+                    <li class="nav__list-item"><a href="/tags/">Tags</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <h1 class="authors-title">Authors</h1>
+                <section class="author-form">
+                    <form class="author-form__form" action="/authors/add" method="POST">
+                        <label class="author-form__field">Name
+                            <input type="text" required name="authorString" placeholder="Enter New Author">
+                        </label>
+                        <button class="author-form__button" type="submit">Submit</button>
+                    </form>
+                </section>
+                <section class="author__list">
+                    <div th:each="author: ${authorsAttribute}">
+                        <a class="author__list-item" th:text="${author.name}" th:href="|/authors/${author.id}|"></a>
+                    </div>
+                </section>
+            </div>
+        </main>
 
-    <div th:each="author: ${authorsAttribute}">
-        <a th:text="${author.name}" th:href="|/authors/${author.id}|"></a>
     </div>
 
 </body>

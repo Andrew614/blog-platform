@@ -5,20 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width= , initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/src/main/resources/static/css/style.css" />
     <title>Blog Site</title>
 </head>
 
 <body>
-    <h1>Categories</h1>
-    <form action="/categories/add" method="POST">
-        <label>Name
-            <input type="text" required name="categoryString" placeholder="Enter Category Name">
-        </label>
-        <button type="submit">Submit</button>
-</form>
-    <div th:each="category: ${categoriesAttribute}">
-        <a th:text="${category.name}" th:href="|/categories/${category.id}|"></a>
+    <div class="wrapper">
+        <header class="main-header">
+            <h1 class="main-header__title">Categories List</h1>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__list-item"><a href="/posts/">Posts</a></li>
+                    <li class="nav__list-item"><a href="/authors/">Authors</a></li>
+                    <li class="nav__list-item"><a href="/categories/">Categories</a></li>
+                    <li class="nav__list-item"><a href="/tags/">Tags</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <h1 class="categories-title">Categories</h1>
+                <section class="category-form">
+                    <form class="category-form__form" action="/categories/add" method="POST">
+                        <label class="category-form__field">Name
+                            <input type="text" required name="categoryString" placeholder="Enter Category Name">
+                        </label>
+                        <button class="category-form__button" type="submit">Submit</button>
+                    </form>
+                </section>
+                <section class="category__list">
+                    <div th:each="category: ${categoriesAttribute}">
+                        <a class="category__list-item" th:text="${category.name}"
+                            th:href="|/categories/${category.id}|"></a>
+                    </div>
+                </section>
+            </div>
     </div>
+    </main>
 
 </body>
 
